@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LawFirm name="Pearson Specter Litt">
+  <Partners>
+    <Partner id="1">
+      <Name>Harvey Specter</Name>
+      <Position>Senior Partner</Position>
+      <Specialization>Corporate Law</Specialization>
+      <Associate>Mike Ross</Associate>
+      <MentorTo>Mike Ross</MentorTo>
+    </Partner>
+    <Partner id="2">
+      <Name>Louis Litt</Name>
+      <Position>Managing Partner</Position>
+      <Specialization>Litigation</Specialization>
+      <Rival>Harvey Specter</Rival>
+      <MentorTo>Katrina Bennett</MentorTo>
+    </Partner>
+  </Partners>
+
+  <Associates>
+    <Associate id="101">
+      <Name>Mike Ross</Name>
+      <Mentor>Harvey Specter</Mentor>
+      <Specialization>Corporate Law</Specialization>
+      <Qualification>None (Secret)</Qualification>
+    </Associate>
+    <Associate id="102">
+      <Name>Katrina Bennett</Name>
+      <Mentor>Louis Litt</Mentor>
+      <Specialization>Litigation</Specialization>
+    </Associate>
+  </Associates>
+
+  <LegalSecretary id="201">
+    <Name>Donna Paulsen</Name>
+    <Position>Chief Operating Officer</Position>
+    <SupportTo>Harvey Specter</SupportTo>
+    <SpecialAbility>Keen Intuition</SpecialAbility>
+  </LegalSecretary>
+
+  <FirmRelationships>
+    <Relationship>
+      <PersonA>Harvey Specter</PersonA>
+      <PersonB>Louis Litt</PersonB>
+      <Type>Rivalry</Type>
+    </Relationship>
+    <Relationship>
+      <PersonA>Harvey Specter</PersonA>
+      <PersonB>Donna Paulsen</PersonB>
+      <Type>Friendship</Type>
+    </Relationship>
+    <Relationship>
+      <PersonA>Mike Ross</PersonA>
+      <PersonB>Rachel Zane</PersonB>
+      <Type>Romantic</Type>
+    </Relationship>
+  </FirmRelationships>
+</LawFirm>
