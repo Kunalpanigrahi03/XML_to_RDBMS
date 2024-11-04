@@ -2,7 +2,7 @@
 <LawFirm name="Pearson Specter Litt">
   <Partners>
     <Partner id="1">
-      <Name>Harvey Specter</Name>
+      <Name> Harvey Specter</Name>
       <Position>Senior Partner</Position>
       <Specialization>Corporate Law</Specialization>
       <Associate>Mike Ross</Associate>

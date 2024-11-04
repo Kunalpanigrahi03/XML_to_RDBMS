@@ -2,7 +2,6 @@ package org.example;
 
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
-
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -12,11 +11,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class readXMLfile {
+
     public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException, SQLException {
+        String xmlFilePath = "C:\\Users\\KIIT\\OneDrive\\Desktop\\DomParser\\data\\example.xml";
+
+        String[] validArgs = {xmlFilePath};
+
+        xmlValidator.main(validArgs);
+
         DBConnection.connectDB();
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
-        Document doc = builder.parse("C:\\Users\\KIIT\\OneDrive\\Desktop\\DomParser\\data\\customers.xml");
+        Document doc = builder.parse(xmlFilePath);
         doc.getDocumentElement().normalize();
 
         Element root = doc.getDocumentElement();

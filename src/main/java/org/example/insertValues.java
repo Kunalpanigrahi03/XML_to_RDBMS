@@ -3,7 +3,6 @@ package org.example;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.w3c.dom.NamedNodeMap;
 
 import java.sql.*;
 import java.util.ArrayList;
