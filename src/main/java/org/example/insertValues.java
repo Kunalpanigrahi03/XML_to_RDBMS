@@ -76,7 +76,6 @@ public class insertValues {
         List<String> columns = new ArrayList<>(Arrays.asList("id", "parent_id"));
         List<Object> values = new ArrayList<>(Arrays.asList(currentId, parentId));
 
-        // Handle attributes
         NamedNodeMap attributes = element.getAttributes();
         for (int i = 0; i < attributes.getLength(); i++) {
             Node attr = attributes.item(i);
@@ -88,7 +87,6 @@ public class insertValues {
             values.add(attr.getNodeValue());
         }
 
-        // Track nested complex elements for serialization
         Map<String, List<Element>> complexElementGroups = new HashMap<>();
 
         NodeList childNodes = element.getChildNodes();
@@ -103,7 +101,6 @@ public class insertValues {
                         values.add(childElement.getTextContent());
                     }
                 } else {
-                    // Collect complex elements by their tag name
                     String complexElementName = childElement.getNodeName();
                     complexElementGroups.computeIfAbsent(complexElementName, k -> new ArrayList<>()).add(childElement);
                     processNestedElement(childElement, currentId, tableSchemas, connection);

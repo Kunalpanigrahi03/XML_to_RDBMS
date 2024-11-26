@@ -8,12 +8,15 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.sql.*;
 import java.util.*;
+import java.util.logging.Logger;
 
 public class readXMLfile {
 
+    private static final Logger logger = Logger.getLogger(readXMLfile.class.getName());
+
     public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException, SQLException {
         if (args.length < 1) {
-            System.out.println("Usage: java ReadXMLFile <filename>");
+            logger.severe("Usage: java ReadXMLFile <filename>");
             return;
         }
 
@@ -23,7 +26,7 @@ public class readXMLfile {
 
         if (args.length > 1 && args[1].equalsIgnoreCase("existing")) {
             if (args.length < 3) {
-                System.out.println("Please provide the table name.");
+                logger.warning("Please provide the table name.");
                 return;
             }
             String tableName = args[2];
@@ -106,7 +109,6 @@ public class readXMLfile {
             }
         }
 
-        // Dynamically add columns for complex elements
         for (String complexElementName : complexElementGroups.keySet()) {
             if (!schema.getColumns().containsKey(complexElementName)) {
                 schema.addColumn(complexElementName, "TEXT");
@@ -129,6 +131,15 @@ public class readXMLfile {
         if (content == null || content.trim().isEmpty()) {
             return "VARCHAR(255)";
         }
+
+        if (content.matches("\\d{4}-\\d{2}-\\d{2}")) {
+            try {
+                java.sql.Date.valueOf(content);
+                return "DATE";
+            } catch (IllegalArgumentException e) {
+                return null;
+            }
+        }
         try {
             Integer.parseInt(content);
             return content.length() <= 11 ? "INT" : "BIGINT";
@@ -137,9 +148,6 @@ public class readXMLfile {
                 Double.parseDouble(content);
                 return "DECIMAL(10,2)";
             } catch (NumberFormatException e2) {
-                if (content.matches("\\d{4}-\\d{2}-\\d{2}")) {
-                    return "DATE";
-                }
                 return content.length() > 255 ? "TEXT" : "VARCHAR(255)";
             }
         }
