@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itinerary>
+    <trip>
+        <destination>New York City</destination>
+        <date>2024-12-15</date>
+        <flights>
+            <flight>
+                <airline>Delta Airlines</airline>
+                <flightNumber>DL1234</flightNumber>
+                <departure>
+                    <airport>Los Angeles International Airport (LAX)</airport>
+                    <time>2024-12-15T08:00:00</time>
+                </departure>
+                <arrival>
+                    <airport>John F. Kennedy International Airport (JFK)</airport>
+                    <time>2024-12-15T16:00:00</time>
+                </arrival>
+            </flight>
+        </flights>
+        <accommodations>
+            <hotel>
+                <name>Empire Hotel</name>
+                <checkIn>2024-12-15</checkIn>
+                <checkOut>2024-12-20</checkOut>
+            </hotel>
+        </accommodations>
+    </trip>
+</itinerary>

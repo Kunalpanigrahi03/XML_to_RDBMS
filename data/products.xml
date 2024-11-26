@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products>
+    <product>
+        <id>P001</id>
+        <name>Laptop</name>
+        <category>Electronics</category>
+        <price>999.99</price>
+        <stock>50</stock>
+        <description>High-performance laptop with 16GB RAM and 512GB SSD</description>
+    </product>
+    <product>
+        <id>P002</id>
+        <name>Smartphone</name>
+        <category>Electronics</category>
+        <price>599.99</price>
+        <stock>100</stock>
+        <description>Latest model with 5G capability and triple camera setup</description>
+    </product>
+    <product>
+        <id>P003</id>
+        <name>Coffee Maker</name>
+        <category>Home Appliances</category>
+        <price>79.99</price>
+        <stock>30</stock>
+        <description>Programmable coffee maker with 12-cup capacity</description>
+    </product>
+</products>
