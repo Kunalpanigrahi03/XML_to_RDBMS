@@ -1,0 +1,111 @@
+<eCommerce>
+    <!-- Product Section with Edge Cases -->
+    <product id="p001">
+        <name>Wireless Earbuds</name>
+        <category>Electronics</category>
+        <price currency="USD">49.99</price>
+        <availability></availability> <!-- Missing availability value -->
+        <attributes>
+            <attribute key="color" value="black"/>
+            <attribute key="batteryLife" value="5 hours"/>
+            <attribute key="waterResistance" value=""/>
+        </attributes>
+    </product>
+
+    <product id="p002">
+        <name>Smartphone X</name>
+        <category>Electronics</category>
+        <price currency="USD">999.99</price>
+        <availability>In Stock</availability>
+        <attributes>
+            <attribute key="color" value="blue"/>
+            <attribute key="storage" value="128GB"/>
+            <attribute key="5GEnabled" value="yes"/>
+        </attributes>
+    </product>
+
+    <!-- Customer Section with Edge Cases -->
+    <customer id="c001">
+        <name>Jane Doe</name>
+        <email>jane.doe@example.com</email>
+        <address>
+            <street>123 Main St</street>
+            <city></city> <!-- Empty city -->
+            <state>CA</state>
+            <zip>90210</zip>
+        </address>
+        <loyalty points="200" level="silver"/> <!-- Optional loyalty info -->
+    </customer>
+
+    <customer id="c002">
+        <name></name> <!-- Empty name -->
+        <email>john.doe@example.com</email>
+        <address>
+            <street>456 Elm St</street>
+            <city>Somewhere</city>
+            <state>NY</state>
+            <zip></zip> <!-- Missing zip code -->
+        </address>
+    </customer>
+
+    <!-- Order Section with Edge Cases -->
+    <order id="o001">
+        <customer id="c001"/>
+        <product id="p001" quantity="2"/>
+        <product id="p002" quantity=""/>
+        <totalPrice currency="USD">1099.97</totalPrice>
+        <status>Shipped</status>
+        <delivery>
+            <expectedDate>2024-04-15</expectedDate>
+            <actualDate></actualDate> <!-- Empty actual date -->
+        </delivery>
+    </order>
+
+    <order id="o002">
+        <customer id="c002"/>
+        <product id="p001" quantity="1"/>
+        <totalPrice currency="USD">49.99</totalPrice>
+        <status>Processing</status>
+        <delivery>
+            <expectedDate>2024-04-20</expectedDate>
+            <actualDate>2024-04-18</actualDate>
+        </delivery>
+    </order>
+
+    <!-- Review Section with Edge Cases -->
+    <review id="r001">
+        <product id="p001"/>
+        <user>Jane Doe</user>
+        <rating>5</rating>
+        <comment>Great sound quality!</comment>
+        <date>2024-03-10</date>
+    </review>
+
+    <review id="r002">
+        <product id="p002"/>
+        <user>John Doe</user>
+        <rating></rating> <!-- Empty rating -->
+        <comment>Good phone, but quite expensive.</comment>
+        <date></date> <!-- Missing date -->
+    </review>
+
+    <!-- Promotion Section with Edge Cases -->
+    <promotion id="promo001">
+        <name>Spring Discount</name>
+        <discount percentage="10"/>
+        <startDate>2024-04-01</startDate>
+        <endDate>2024-04-30</endDate>
+        <applicableProducts>
+            <product id="p001"/>
+            <product id="p002"/>
+        </applicableProducts>
+    </promotion>
+
+    <promotion id="promo002">
+        <name></name> <!-- Missing name -->
+        <discount percentage="20"/>
+        <startDate>2024-05-01</startDate>
+        <endDate></endDate> <!-- Empty end date -->
+    </promotion>
+
+</eCommerce>

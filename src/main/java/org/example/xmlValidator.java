@@ -14,6 +14,12 @@ public class xmlValidator {
         }
 
         String filename = args[0];
+
+        if (!isXMLFile(filename)) {
+            System.err.println("Error : The file must be a .xml extension");
+            return;
+        }
+
         try {
             validateXML(filename);
         } catch (IOException e) {
@@ -108,5 +114,9 @@ public class xmlValidator {
             this.name = name;
             this.lineNumber = lineNumber;
         }
+    }
+
+    private static boolean isXMLFile(String filename) {
+        return filename.toLowerCase().endsWith(".xml");
     }
 }

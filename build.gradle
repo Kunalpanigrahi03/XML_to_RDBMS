@@ -1,5 +1,7 @@
 plugins {
     id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.10'
 }
 
 group 'org.example'
@@ -9,14 +11,49 @@ repositories {
     mavenCentral()
 }
 
+ext {
+    javafxVersion = '17.0.2'
+    javaVersion = JavaVersion.VERSION_17
+}
+
+java {
+    sourceCompatibility = javaVersion
+    targetCompatibility = javaVersion
+}
+
+javafx {
+    version = javafxVersion
+    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.graphics' ]
+}
+
 dependencies {
+    implementation "org.openjfx:javafx-base:${javafxVersion}"
+    implementation "org.openjfx:javafx-controls:${javafxVersion}"
+    implementation "org.openjfx:javafx-fxml:${javafxVersion}"
+    implementation "org.openjfx:javafx-graphics:${javafxVersion}"
+
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
     implementation 'mysql:mysql-connector-java:8.0.33'
+}
+
+application {
+    mainClass = 'org.example.appUI'
 }
 
 test {
     useJUnitPlatform()
 }
 
+compileJava {
+    options.encoding = 'UTF-8'
+}
 
+run {
+    doFirst {
+        jvmArgs = [
+                '--module-path', classpath.asPath,
+                '--add-modules', 'javafx.controls,javafx.fxml,javafx.graphics'
+        ]
+    }
+}

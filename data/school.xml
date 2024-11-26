@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<school>
+    <department id="d001">
+        <name>Computer Science</name>
+        <headOfDepartment></headOfDepartment> <!-- Empty value -->
+        <courses>
+            <course id="c101">
+                <name>Data Structures</name>
+                <description>Study of data organization methods.</description>
+                <instructor></instructor> <!-- Empty instructor -->
+                <semester>Fall</semester>
+                <credits>3</credits>
+                <prerequisites>
+                    <course id="c001"></course> <!-- Empty prerequisite reference -->
+                    <course id="c002">Introduction to Programming</course>
+                </prerequisites>
+            </course>
+            <course id="c102">
+                <name></name> <!-- Empty course name -->
+                <description>Advanced topics in algorithms.</description>
+                <instructor>Dr. Jane Smith</instructor>
+                <semester></semester> <!-- Empty semester -->
+                <credits>4</credits>
+                <prerequisites>
+                    <course id=""></course> <!-- Empty ID in prerequisite -->
+                </prerequisites>
+            </course>
+        </courses>
+    </department>
+
+    <department id="d002">
+        <name>Mathematics</name>
+        <headOfDepartment>Dr. Alan Brown</headOfDepartment>
+        <courses>
+            <course id="c201">
+                <name>Calculus I</name>
+                <description></description> <!-- Empty description -->
+                <instructor>Prof. Emily White</instructor>
+                <semester>Spring</semester>
+                <credits></credits> <!-- Empty credits -->
+            </course>
+            <course id="c202">
+                <name>Linear Algebra</name>
+                <description>Basic concepts of vector spaces and matrices.</description>
+                <instructor></instructor> <!-- Empty instructor -->
+                <semester>Fall</semester>
+                <credits>3</credits>
+            </course>
+        </courses>
+    </department>
+
+    <department id="d003">
+        <name>Physics</name>
+        <headOfDepartment></headOfDepartment> <!-- Empty head of department -->
+        <courses>
+            <course id="c301">
+                <name>Quantum Mechanics</name>
+                <description>Fundamental concepts of quantum theory.</description>
+                <instructor>Dr. Richard Feynman</instructor>
+                <semester></semester> <!-- Empty semester -->
+                <credits>5</credits>
+                <prerequisites>
+                    <course id="c101"></course> <!-- Reference to another course -->
+                </prerequisites>
+            </course>
+            <course id="c302">
+                <name>Optics</name>
+                <description></description> <!-- Empty description -->
+                <instructor></instructor> <!-- Empty instructor -->
+                <semester>Summer</semester>
+                <credits></credits> <!-- Empty credits -->
+            </course>
+        </courses>
+    </department>
+</school>

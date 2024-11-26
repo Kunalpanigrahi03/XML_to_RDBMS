@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<company name="TechCorp">
+    <department name="Engineering">
+        <employee id="e001" role="Developer">
+            <name>Alice Johnson</name>
+            <email>alice.johnson@techcorp.com</email>
+            <location>San Francisco</location>
+        </employee>
+        <employee id="e002" role="Manager">
+            <name>Bob Lee</name>
+            <email>bob.lee@techcorp.com</email>
+            <location>New York</location>
+        </employee>
+    </department>
+    <department name="Marketing">
+        <employee id="e003" role="Analyst">
+            <name>Claire White</name>
+            <email>claire.white@techcorp.com</email>
+            <location>Los Angeles</location>
+        </employee>
+    </department>
+</company>
