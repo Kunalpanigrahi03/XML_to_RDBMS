@@ -49,7 +49,7 @@
     </customer>
 
     <!-- Order Section with Edge Cases -->
-    <order id="o001">
+    <orders id="o001">
         <customer id="c001"/>
         <product id="p001" quantity="2"/>
         <product id="p002" quantity=""/>
@@ -57,11 +57,11 @@
         <status>Shipped</status>
         <delivery>
             <expectedDate>2024-04-15</expectedDate>
-            <actualDate></actualDate> <!-- Empty actual date -->
+            <actualDate>2024-05-15</actualDate>
         </delivery>
-    </order>
+    </orders>
 
-    <order id="o002">
+    <orders id="o002">
         <customer id="c002"/>
         <product id="p001" quantity="1"/>
         <totalPrice currency="USD">49.99</totalPrice>
@@ -70,9 +70,8 @@
             <expectedDate>2024-04-20</expectedDate>
             <actualDate>2024-04-18</actualDate>
         </delivery>
-    </order>
+    </orders>
 
-    <!-- Review Section with Edge Cases -->
     <review id="r001">
         <product id="p001"/>
         <user>Jane Doe</user>
@@ -84,9 +83,9 @@
     <review id="r002">
         <product id="p002"/>
         <user>John Doe</user>
-        <rating></rating> <!-- Empty rating -->
+        <rating></rating>
         <comment>Good phone, but quite expensive.</comment>
-        <date></date> <!-- Missing date -->
+        <date>2001-01-01</date>
     </review>
 
     <!-- Promotion Section with Edge Cases -->
@@ -102,10 +101,10 @@
     </promotion>
 
     <promotion id="promo002">
-        <name></name> <!-- Missing name -->
+        <name></name>
         <discount percentage="20"/>
         <startDate>2024-05-01</startDate>
-        <endDate></endDate> <!-- Empty end date -->
+        <endDate>2024-06-01</endDate>
     </promotion>
 
 </eCommerce>
