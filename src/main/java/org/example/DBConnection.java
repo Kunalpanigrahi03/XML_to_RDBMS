@@ -5,14 +5,15 @@ import java.sql.*;
 public class DBConnection {
     public static Connection conn = null;
 
-    public static void connectDB() {
+    public static Connection connectDB() {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
             String url = "jdbc:mysql://localhost:3306/mysql?useSSL=false";
             String user = "root";
             String password = "2003kunal";
+            Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection(url, user, password);
             System.out.println("Database connection established: " + conn);
+            return conn;
         } catch (ClassNotFoundException e) {
             System.out.println("JDBC Driver not found.");
             e.printStackTrace();
@@ -20,6 +21,7 @@ public class DBConnection {
             System.out.println("SQL error occurred.");
             e.printStackTrace();
         }
+        return null;
     }
 
     public static void closeDB() {
@@ -34,6 +36,15 @@ public class DBConnection {
     }
 
     public static Connection getConnection() {
-        return conn;
+        try {
+            if (conn == null || conn.isClosed()) {
+                return connectDB();
+            }
+            return conn;
+        } catch (SQLException e) {
+            System.out.println("Error checking connection status.");
+            e.printStackTrace();
+            return connectDB();
+        }
     }
 }
