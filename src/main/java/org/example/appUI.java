@@ -79,6 +79,7 @@
                     filePane,
                     schemaPane,
                     processButton,
+                    displayButton,
                     new Label("Result:"),
                     resultArea,
                     new Label("Table Data:"),
@@ -227,8 +228,6 @@
 
                 readXMLfile.main(args);
                 resultArea.appendText("XML file processed successfully\n");
-
-                displayTableData(tableName);
 
             } catch (Exception e) {
                 showAlert("Error processing XML file: " + e.getMessage());
